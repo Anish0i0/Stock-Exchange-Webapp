@@ -11,46 +11,83 @@ function Footer() {
         <div className="col">
           <p className="">Company</p>
           <div className="text-muted" style={{ textDecoration: "none" }}>
-            <a href="">About</a>
+            <a href="" className="text-decoration-none text-dark">
+              About
+            </a>
             <br></br>
-            <a href="">products</a>
+            <a href="" className="text-decoration-none text-dark">
+              products
+            </a>
             <br></br>
-            <a href="">Pricing</a>
+            <a href="" className="text-decoration-none text-dark">
+              Pricing
+            </a>
             <br></br>
-            <a href="">Referral Program</a>
+            <a href="" className="text-decoration-none text-dark">
+              Referral Program
+            </a>
             <br></br>
-            <a href="">Career</a>
+            <a href="" className="text-decoration-none text-dark">
+              Career
+            </a>
             <br></br>
-            <a href="">Stocky.Tech</a>
+            <a href="" className="text-decoration-none text-dark">
+              Stocky.Tech
+            </a>
             <br></br>
-            <a href="">Press and Media</a>
+            <a href="" className="text-decoration-none text-dark">
+              Press and Media
+            </a>
             <br></br>
-            <a href="">Stocky cares (csr)</a>
+            <a href="" className="text-decoration-none text-dark">
+              Stocky cares (csr)
+            </a>
           </div>
         </div>
         <div className="col">
           <p>Support</p>
           <div className="text-muted" style={{ textDecoration: "none" }}>
-            <a href="">Contact</a>
+            <a href="" className="text-decoration-none text-dark">
+              Contact
+            </a>
             <br></br>
-            <a href="">Support portal</a>
+            <a href="" className="text-decoration-none text-dark">
+              Support portal
+            </a>
             <br></br>
-            <a href="">S-Connect blog</a>
+            <a href="" className="text-decoration-none text-dark">
+              S-Connect blog
+            </a>
             <br></br>
-            <a href="">List of charges</a>
+            <a href="" className="text-decoration-none text-dark">
+              List of charges
+            </a>
             <br></br>
-            <a href="">Downloads and resources</a>
+            <a href="" className="text-decoration-none text-dark">
+              Downloads and resources
+            </a>
             <br></br>
           </div>
         </div>
-        <div className="col">
-          <p>Account</p>
-          <div className="text-muted" style={{ textDecoration: "none" }}>
-            <a href="">Open an account</a>
+        <div className="col ">
+          <p text-decoration-none text-dark>
+            Account
+          </p>
+          <div
+            className="text-muted"
+            style={{ textDecoration: "none", color: "dark" }}
+          >
+            <a href="" className="text-decoration-none text-dark">
+              Open an account
+            </a>
             <br></br>
-            <a href="">Fund transfer</a>
+            <a href="" className="text-decoration-none text-dark">
+              Fund transfer
+            </a>
             <br></br>
-            <a href="">60days challenge</a>
+            <a href="" className="text-decoration-none text-dark">
+              60days challenge
+            </a>
             <br></br>
           </div>
         </div>

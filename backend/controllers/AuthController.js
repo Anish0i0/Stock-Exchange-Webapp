@@ -70,11 +70,11 @@ module.exports.Login = async (req, res) => {
 
     const token = createSecretToken(user._id);
 
-    res.clearCookie("token", {
+    res.cookie("token", token, {
       httpOnly: true,
       secure: true,
       sameSite: "none",
-      path: "/",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     res.status(200).json({

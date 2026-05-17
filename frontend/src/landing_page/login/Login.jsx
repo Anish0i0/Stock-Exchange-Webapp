@@ -19,8 +19,12 @@ const Login = () => {
         },
       );
 
+      console.log("LOGIN RESPONSE:", data);
+
       if (data.success) {
+        console.log("TOKEN:", data.token);
         localStorage.setItem("token", data.token);
+        console.log("STORED TOKEN:", localStorage.getItem("token"));
         window.location.href = import.meta.env.VITE_DASHBOARD_URL;
       } else {
         alert(data.message);

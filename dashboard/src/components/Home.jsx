@@ -7,6 +7,14 @@ import TopBar from "./TopBar";
 
 const Home = () => {
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlToken = params.get("token");
+
+    if (urlToken) {
+      localStorage.setItem("token", urlToken);
+      window.history.replaceState({}, document.title, "/");
+    }
+
     const token = localStorage.getItem("token");
 
     console.log("TOKEN IN DASHBOARD:", token);
@@ -31,12 +39,16 @@ const Home = () => {
         console.log("VERIFY RESPONSE:", res.data);
 
         if (!res.data.status) {
+          console.error("VERIFICATION FAILED:", res.data.message);
           localStorage.removeItem("token");
           window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
         }
       })
       .catch((err) => {
-        console.log("VERIFY ERROR:", err);
+        console.error(
+          "VERIFY REQUEST FAILED:",
+          err.response?.data || err.message,
+        );
 
         localStorage.removeItem("token");
         window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;

@@ -82,17 +82,22 @@ module.exports.verifyUser = async (req, res) => {
   }
 
   if (!token) {
+    console.error("NO TOKEN PROVIDED");
     return res.json({
       status: false,
+      message: "No token provided",
     });
   }
 
   jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
     if (err) {
+      console.error("TOKEN VERIFICATION FAILED:", err.message);
       return res.json({
         status: false,
+        message: `Verification failed: ${err.message}`,
       });
     } else {
+      console.log("TOKEN VERIFIED SUCCESSFULLY FOR USER:", decoded.id);
       return res.json({
         status: true,
       });

@@ -35,7 +35,7 @@ app.use(express.json());
 app.use("/", authRoute);
 
 app.get("/", (req, res) => {
-  res.send("Yooo!");
+  res.send("Yooo! v2");
 });
 
 app.get("/allHoldings", async (req, res) => {

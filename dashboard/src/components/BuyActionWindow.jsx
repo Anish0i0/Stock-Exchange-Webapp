@@ -17,6 +17,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = async () => {
     try {
+      const token = localStorage.getItem("token");
       await axios.post(
         `${import.meta.env.VITE_API_URL}/newOrder`,
         {
@@ -26,7 +27,9 @@ const BuyActionWindow = ({ uid }) => {
           mode: "BUY",
         },
         {
-          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
       );
 

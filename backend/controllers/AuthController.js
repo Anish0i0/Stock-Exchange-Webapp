@@ -29,17 +29,10 @@ module.exports.Signup = async (req, res) => {
 
     const token = createSecretToken(user._id);
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      path: "/",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-    });
-
     res.status(201).json({
       success: true,
       message: "Signup successful",
+      token,
     });
   } catch (err) {
     console.log(err);
@@ -70,16 +63,10 @@ module.exports.Login = async (req, res) => {
 
     const token = createSecretToken(user._id);
 
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      maxAge: 7 * 24 * 60 * 60 * 1000,
-    });
-
     res.status(200).json({
       success: true,
       message: "Login successful",
+      token,
     });
   } catch (err) {
     console.log(err);
@@ -87,7 +74,12 @@ module.exports.Login = async (req, res) => {
 };
 
 module.exports.verifyUser = async (req, res) => {
-  const token = req.cookies.token;
+  const authHeader = req.headers.authorization;
+  let token = req.cookies.token;
+
+  if (authHeader && authHeader.startsWith("Bearer ")) {
+    token = authHeader.substring(7);
+  }
 
   if (!token) {
     return res.json({

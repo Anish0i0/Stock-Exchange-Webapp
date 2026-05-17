@@ -17,12 +17,10 @@ const Login = () => {
           email,
           password,
         },
-        {
-          withCredentials: true,
-        },
       );
 
       if (data.success) {
+        localStorage.setItem("token", data.token);
         window.location.href = import.meta.env.VITE_DASHBOARD_URL;
       } else {
         alert(data.message);

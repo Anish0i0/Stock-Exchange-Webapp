@@ -7,26 +7,35 @@ import TopBar from "./TopBar";
 
 const Home = () => {
   useEffect(() => {
-    console.log("API URL:", import.meta.env.VITE_API_URL);
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
+      return;
+    }
 
     axios
       .post(
         `${import.meta.env.VITE_API_URL}/`,
         {},
         {
-          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
       )
       .then((res) => {
         console.log("VERIFY RESPONSE:", res.data);
 
         if (!res.data.status) {
+          localStorage.removeItem("token");
           window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
         }
       })
       .catch((err) => {
         console.log("VERIFY ERROR:", err);
 
+        localStorage.removeItem("token");
         window.location.href = `${import.meta.env.VITE_FRONTEND_URL}/login`;
       });
   }, []);

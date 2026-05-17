@@ -19,14 +19,18 @@ const Menu = () => {
 
   const handleLogout = async () => {
     try {
+      const token = localStorage.getItem("token");
       await axios.post(
         `${import.meta.env.VITE_API_URL}/logout`,
         {},
         {
-          withCredentials: true,
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
       );
 
+      localStorage.removeItem("token");
       window.location.href = import.meta.env.VITE_FRONTEND_URL;
     } catch (err) {
       console.log(err);

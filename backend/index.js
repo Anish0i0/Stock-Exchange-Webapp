@@ -18,7 +18,10 @@ const url = process.env.MONGO_URL;
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "https://your-frontend.vercel.app",
+      "https://your-dashboard.vercel.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }),

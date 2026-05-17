@@ -19,8 +19,8 @@ const url = process.env.MONGO_URL;
 app.use(
   cors({
     origin: [
-      "https://your-frontend.vercel.app",
-      "https://your-dashboard.vercel.app",
+      "https://stock-exchange-webapp.vercel.app",
+      "https://stock-exchange-webapp-xrne.vercel.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,

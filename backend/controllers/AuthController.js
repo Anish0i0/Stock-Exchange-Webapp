@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 
 const jwt = require("jsonwebtoken");
 
-const { createSecretToken } = require("../utils/SecretToken");
+const { createSecretToken } = require("../Utils/SecretToken");
 
 module.exports.Signup = async (req, res) => {
   try {

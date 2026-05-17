@@ -34,6 +34,7 @@ module.exports.Signup = async (req, res) => {
       secure: true,
       sameSite: "none",
       path: "/",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
     });
 
     res.status(201).json({
@@ -69,7 +70,7 @@ module.exports.Login = async (req, res) => {
 
     const token = createSecretToken(user._id);
 
-    res.cookie("token", token, {
+    res.clearCookie("token", {
       httpOnly: true,
       secure: true,
       sameSite: "none",

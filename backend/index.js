@@ -7,9 +7,9 @@ const cookieParser = require("cookie-parser");
 
 const authRoute = require("./routes/AuthRoute");
 
-const { HoldingsModel } = require("./model/HoldingsModel");
-const { PositionsModel } = require("./model/PositionsModel");
-const { OrdersModel } = require("./model/OrdersModel");
+const { HoldingsModel } = require("./models/HoldingsModel");
+const { PositionsModel } = require("./models/PositionsModel");
+const { OrdersModel } = require("./models/OrdersModel");
 
 const app = express();
 

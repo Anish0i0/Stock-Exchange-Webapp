@@ -70,8 +70,8 @@ module.exports.Login = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      sameSite: "lax",
-      secure: false,
+      sameSite: "none",
+      secure: true,
     });
 
     res.status(200).json({
@@ -106,7 +106,11 @@ module.exports.verifyUser = async (req, res) => {
 };
 
 module.exports.Logout = async (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token", {
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+  });
 
   return res.json({
     success: true,

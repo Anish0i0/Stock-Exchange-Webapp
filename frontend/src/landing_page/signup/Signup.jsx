@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
 
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,8 +29,7 @@ const Signup = () => {
       );
 
       if (data.success) {
-        localStorage.setItem("token", data.token);
-        window.location.href = import.meta.env.VITE_DASHBOARD_URL;
+        window.location.href = `${import.meta.env.VITE_DASHBOARD_URL}?token=${data.token}`;
       } else {
         setError(data.message);
       }
@@ -106,7 +107,14 @@ const Signup = () => {
         </form>
 
         <p className="text-center mt-3">
-          Already have an account? <a href="/login">Login</a>
+          Already have an account?{" "}
+          <a
+            href="#"
+            onClick={() => navigate("/login")}
+            style={{ cursor: "pointer" }}
+          >
+            Login
+          </a>
         </p>
       </div>
     </div>

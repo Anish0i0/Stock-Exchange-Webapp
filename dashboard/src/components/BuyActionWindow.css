@@ -218,3 +218,158 @@
   background: #9b9b9b;
   color: #fff;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    height: 70%;
+    left: 5%;
+  }
+
+  .header h3 {
+    font-size: 0.9rem;
+  }
+
+  .header h3 span {
+    font-size: 0.55rem;
+  }
+
+  .market-options {
+    font-size: 0.7rem;
+  }
+
+  .tab button {
+    padding: 10px 12px;
+    font-size: 0.7rem;
+  }
+
+  .regular-order {
+    padding: 12px 16px;
+  }
+
+  .regular-order label {
+    font-size: 0.7rem;
+  }
+
+  .order-validity {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .inputs {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .inputs fieldset {
+    max-width: 100px;
+  }
+
+  .inputs fieldset legend {
+    font-size: 0.7rem;
+  }
+
+  .inputs fieldset input {
+    max-width: 100px;
+    min-height: 32px;
+    font-size: 1rem;
+  }
+
+  .options span {
+    font-size: 0.7rem;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .buttons span {
+    font-size: 0.7rem;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    height: 75%;
+    left: 2.5%;
+  }
+
+  .header h3 {
+    font-size: 0.8rem;
+  }
+
+  .header h3 span {
+    font-size: 0.5rem;
+  }
+
+  .market-options {
+    font-size: 0.65rem;
+  }
+
+  .tab button {
+    padding: 8px 10px;
+    font-size: 0.65rem;
+  }
+
+  .regular-order {
+    padding: 10px 12px;
+  }
+
+  .regular-order label {
+    font-size: 0.65rem;
+  }
+
+  .order-validity label span {
+    font-size: 0.65rem;
+  }
+
+  .inputs {
+    flex-direction: column;
+  }
+
+  .inputs fieldset {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .inputs fieldset legend {
+    font-size: 0.65rem;
+  }
+
+  .inputs fieldset input {
+    max-width: 100%;
+    width: 100%;
+    min-height: 30px;
+    font-size: 0.95rem;
+  }
+
+  .options span {
+    font-size: 0.65rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    padding: 0 8px;
+  }
+
+  .buttons span {
+    font-size: 0.65rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.75rem;
+    margin: 4px 0;
+  }
+}
